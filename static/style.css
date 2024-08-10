@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+.wrapper{
+    width: 100%;
+    margin: auto;
+}
+.button1 {
+  background-color: rgb(88, 227, 118);
+  color: hsl(0, 20%, 99%);
+  border: 2px solid #4CAF50; /* Green */
+}
+
+header{
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-EYefHi3SW5rrC_zC8CldrjPTQ-r5FKFfYw&usqp=CAU);
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.x {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.nav-area {
+    width: 100%; /* Set the width to 100% to take up the full width of the screen */
+    float: left;
+    list-style: none;
+    margin: 0; /* Remove the margin to ensure it starts from the edge of the screen */
+    padding: 0; /* Remove padding to ensure it starts from the edge of the screen */
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+}
+.nav-area li{
+    display: inline-block;
+    vertical-align: top; /* Add to align items properly */
+}
+.nav-area li a {
+color: #fff;
+text-decoration: none;
+padding: 5px 20px;
+font-family: poppins;
+font-size: 16px;
+text-transform: uppercase;
+}
+.nav-area li a:hover{
+    background: #fff;
+    color: #333;
+}
+.welcome-text{
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    margin: 20% 30%;
+    text-align: center;
+}
+.welcome-text h1{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 35px;
+    text-shadow: 2px 2px #ff0000;
+}
+.welcome-text a{
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    color: #fff;
+}
+.welcome-text a:hover{
+    background: #fff;
+    color: #333;
+}
+
+/* Center the dashboard */
+.dashboard-container {
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Ensure it behaves as a block element */
+    width: 100%; /* Adjust width as needed */
+    max-width: 1440px; /* Limit maximum width */
+}
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #040a05;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.person {
+    width: calc(33.33% - 20px);
+    padding: 20px;
+    background-color: #b0dab4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.person img {
+        display: block;
+        margin: 0 auto 10px;
+        width: 310px;
+        height: 310px;
+        border-radius: 70%;
+        object-fit: cover;
+}
+
+.person h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.person p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+/*resposive*/
+
+@media (max-width:600px){
+    .wrapper {
+width: 100%;
+}
+.logo {
+float: none;
+width: 50%;
+text-align: center;
+margin: auto;
+}
+img {
+width: 30px;
+}
+.nav-area {
+float: none;
+margin-top: 0;
+}
+    .nav-area li a {
+padding: 5px;
+font-size: 11px;
+}
+.nav-area {
+text-align: center;
+}
+    .welcome-text {
+width: 100%;
+height: auto;
+margin: 30% 0;
+}
+    .welcome-text h1 {
+font-size: 30px;
+}
+}

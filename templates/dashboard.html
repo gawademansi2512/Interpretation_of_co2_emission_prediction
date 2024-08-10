@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+    <form>
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                </div>
+                <link rel="stylesheet" type="text/css" href="style.css">
+                <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('dashboard')}}">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('about')}}">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('prediction')}}">Prediction</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- Bootstrap JS and jQuery (for dropdown functionality) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<div class="dashboard-container">
+
+    
+        <iframe title="PBL Last Year" width="1440" height="650" src="https://app.powerbi.com/reportEmbed?reportId=af5b1457-6c13-4fa1-9d06-bf1bec042eef&autoAuth=true&ctid=a64aeab6-f01b-462b-aa9c-44546386ff31" 
+frameborder="2" allowFullScreen="true"></iframe>
+</div>
+</body>
+    

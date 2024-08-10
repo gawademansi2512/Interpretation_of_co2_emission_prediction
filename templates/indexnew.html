@@ -1,0 +1,171 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('dashboard')}}">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('about')}}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('prediction')}}">Prediction</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <style>
+        .idiv{
+        width:60%;
+        margin:auto;
+        background-color:#008a91;
+        text-align:center;
+        margin-top:2%;
+        border-radius:10px;
+        }
+        body{
+        font-family:segoe ui;
+        background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-EYefHi3SW5rrC_zC8CldrjPTQ-r5FKFfYw&usqp=CAU);
+            height: 100vh;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+        }
+        
+        input{
+        font-size:1.3em;
+        color: black;
+        width:80%;
+        text-align:center;
+        border-color: white;
+        }
+        
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color:grey;
+          opacity: 1; /* Firefox */
+        }
+        input placeholder{
+        text-align:center;
+        }
+        button{
+        outline:0;
+        border:0;
+        background-color:darkred;
+        color:white;
+        width:100px;
+        height:40px;
+        }
+        button:hover{
+        background-color:brown;
+        border:solid 1px black;
+        }
+        select {
+        font-size:1.3em;
+        width:80%;
+        text-align: center;
+        border: 2px solid balck;
+        color:grey;
+        }
+        select:focus,select:checked{
+            color: black;
+        }
+        
+        hr{
+        border-top: 1px dashed black;
+        }
+        </style>
+<head>
+<title>-- CO2 Cars Emission Predictor -- </title>
+</head>
+<body>
+<div class='idiv'>
+<br/>
+<h1>CO2 Cars Emission Predictor</h1>
+<hr/>
+<br/>
+<form action="/predict" method="POST">
+<select  id="drop" name="Make" >
+    <option>Select the type of CAR</option>
+    <option value="9">FORD</option>
+    <option value="5">CHEVROLET</option>
+<option value="8">DODGE</option>
+    <option value="2">BMW</option>
+<option value="10">GMC</option>
+    <option value="31">TOYOTA</option>
+<option value="32">VOLKSWAGEN</option>
+    <option value="21">MERCEDES-BENZ</option>
+<option value="6">CHRYSLER</option>
+    <option value="1">AUDI</option>
+<option value="20">MAZDA</option>
+    <option value="33">VOLVO</option>
+<option value="22">NISSAN</option>
+    <option value="25">PONTIAC</option>
+<option value="27">SAAB</option>
+    <option value="28">SATURN</option>
+<option value="30">SUZUKI</option>
+    <option value="11">HONDA</option>
+<option value="29">SUBARU</option>
+    <option value="12">HYUNDAI</option>
+<option value="0">ACURA</option>
+    <option value="7">DAEWOO</option>
+<option value="15">JAGUAR</option>
+    <option value="17">KIA</option>
+  </select><br>
+<select id="drop" name="Vehicle_class">
+<option value="">Select the Car Class</option>
+    <option value="0">COMPACT</option>
+    <option value="6">PICKUP TRUCK - STANDARD</option>
+<option value="10">SUV</option>
+    <option value="2">MID-SIZE</option>
+<option value="9">SUBCOMPACT</option>
+    <option value="11">TWO-SEATER</option>
+<option value="7">STATION WAGON - MID-SIZE</option>
+    <option value="1">FULL-SIZE</option>
+<option value="12">VAN - CARGO</option>
+    <option value="13">VAN - PASSENGER</option>
+<option value="3">MINICOMPACT</option>
+    <option value="4">MINIVAN</option>
+<option value="8">STATION WAGON - SMALL</option>
+    <option value="5">PICKUP TRUCK - SMALL</option>
+  </select><br>
+ <input class="form-input" type="text" name="Engine_size" placeholder="Enter the engine size(range from 0.9 to 8.4)"><br>  
+<input class="form-input" type="text" name="Cylinders" placeholder="Enter the Cylinders size(3.0 to 16.0)"><br>
+<select id="drop" name="Transmission">
+<option value="">Select transmission of the car</option>
+    <option value="0">Automatic</option>
+    <option value="3">Manual</option>
+<option value="1">Automatic with Select Shift</option>
+    <option value="2">Continuously Variable</option>
+  </select><br>
+<select id="drop" name="Fuel_type">
+<option value="">Select the Fuel Type</option>
+     <option value="4">Regular Gasoline</option>
+    <option value="3">Premium Gasoline</option>
+     <option value="0">Diesel</option>
+    <option value="1">Ethanol(E85)</option>
+     <option value="2">Natural Gas</option>
+  </select><br>
+<input class="form-input" type="text" name="Fuel_consumption_city(L/100 km)" 
+placeholder="Enter the Fuel Consumption City(L/100km)Range(4.2 to 30.6)"><br>
+<input class="form-input" type="text" name="Fuel_consumption_hwy(L/100 km)" 
+placeholder="Enter the Fuel Consumption Highway(L/100km)Range(4.2 to 20.6)"><br>
+<input class="form-input" type="text" name="Fuel_consumption_comb(mpg)"
+ placeholder="Enter the Combine Fuel Consumption(mpg)Range(11.0 to 69.6)"><br>
+<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+<br/>
+<br/>
+<br/>
+</div>
